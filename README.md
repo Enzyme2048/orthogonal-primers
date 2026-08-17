@@ -331,4 +331,4 @@ The final graph pruning heuristic is deterministic for a fixed accepted pool.
 
 ## License
 
-See [LICENSE.htm](LICENSE.htm) for license terms.
+See [LICENSE.txt](LICENSE.txt) for license terms.
