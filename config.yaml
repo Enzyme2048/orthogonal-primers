@@ -1,0 +1,57 @@
+generator:
+  primer_length: 20
+  target_size: 200
+  random_seed: 12345
+  max_attempts: 50000
+  checkpoint_interval: 100
+  force_target_size: false
+  force_target_cycle_oversample_multiplier: 3.0
+  force_target_post_target_seconds: 30
+
+composition:
+  gc_min_fraction: 0.45
+  gc_max_fraction: 0.55
+
+filters:
+  intrinsic_tm_min_c: 60.0
+  intrinsic_tm_max_c: 65.0
+  max_homopolymer: 3
+  max_dinucleotide_repeats: 2
+  max_trinucleotide_repeats: 1
+  near_palindrome_min_match: 14
+  self_complementarity_run_threshold: 6
+
+forbidden_motifs:
+  motifs:
+    - GAATTC
+    - GGATCC
+    - AAGCTT
+  motif_file:
+  include_reverse_complements: true
+
+thermodynamics:
+  pair_tm_max_c: 40.0
+  strand_concentration_nM: 500.0
+  monovalent_mM: 50.0
+  magnesium_mM: 0.0
+  temperature_unit: C
+  min_alignment_run: 4
+  three_prime_window_nt: 3
+  precompute_shortest_threshold_seq: true
+
+pairing:
+  enabled: true
+  sense_tm_max_c: 30.0
+  rejection_window: 50
+  requeue_probability_scale: 1.0
+  max_attempts_multiplier: 50
+  stagnation_attempt_window: 500
+
+output:
+  root_dir: outputs
+  final_csv: final_primers.csv
+  pairings_csv: primer_pairs.csv
+  unpaired_csv: unpaired_primers.csv
+  summary_json: run_summary.json
+  checkpoint_file: checkpoint.pkl
+  resolved_config_yaml: resolved_config.yaml

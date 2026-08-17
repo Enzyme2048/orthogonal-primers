@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orthogonal-primer-generator"
+version = "0.1.0"
+description = "Config-driven generator for thermodynamically orthogonal DNA primer pools."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "biopython>=1.87",
+]
+authors = [
+    { name = "Orthogonal Primer Generator contributors" },
+]
+keywords = [
+    "dna",
+    "primers",
+    "pcr",
+    "bioinformatics",
+    "thermodynamics",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.scripts]
+orthogonal-primers = "primer_generator.cli:main"
+
+[tool.setuptools]
+packages = ["primer_generator"]
